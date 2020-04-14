@@ -5,13 +5,13 @@ def selection_sort( arr ):
         cur_index = i 
         smallest_index = cur_index 
 
-        for j in range(i+1, len(arr)): 
-            if arr[j] < arr[smallest_index]:
-                smallest_index = j
+        for j in range(i+1, len(arr)): #loop through items in array starting at i + 1 to the end
+            if arr[j] < arr[smallest_index]: #if the value of j is smaller than the smallest index
+                smallest_index = j # set the smallest index equal to j
         # TO-DO: swap
-        if smallest_index:
+        if smallest_index: # it smallest index has been changed
             arr[smallest_index],arr[cur_index] = arr[cur_index], arr[smallest_index]
-    
+            # swap smallest index with the current index
 
     return arr
 
