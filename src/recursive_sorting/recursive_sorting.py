@@ -1,22 +1,22 @@
 # TO-DO: complete the helpe function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
-    merged_arr = []
+    merged_arr = [0] * elements
     # TO-DO
     # compare the first i in each array and add the smaller to the result
-    while arrA and arrB > 0:
-        if arrA[0]> arrB[0]:
+    while elements > 1:
+        if arrA[0] > arrB[0]:
             merged_arr.append(arrB[0])
             arrB.remove([0])
         else:
             merged_arr.append(arrA[0])
-            arrA.remove([0])
-    while arrA > elements:
+            arrA.remove(arrA[0])
+    while len(arrA) > 0 and len(arrB) == 0:
         merged_arr.append(arrA[0])
-        arrA.remove([0])
-    while arrB > elements:
+        arrA.remove(arrA[0])
+    while len(arrB) > 0 and len(arrA) == 0:
         merged_arr.append(arrB[0])
-        arrB.remove([0])
+        arrB.remove(arrB[0])
 
     return merged_arr
 
